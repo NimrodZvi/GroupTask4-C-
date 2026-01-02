@@ -27,34 +27,34 @@ int mapSequences(char strMat[][SIZE], int rows)
 
 	for (int i = 0; i < rows; i++)
 	{
-		int currentseqCount = 0;
+		int currentSeqCount = 0;
 		int charCount = 1;
 
 		if (strMat[i][0] == '0') // check the first char. if it 0, print 0
 		{
 			cout << "0";
-			currentseqCount++;
+			currentSeqCount++;
 		}
 
 		for (int j = 1; strMat[i][j] != '\0'; j++) // loop of the string itself
 		{
-			if (strMat[i][j] == strMat[i][j - 1])
+			if (strMat[i][j] == strMat[i][j - 1]) //if the current 'j' is equal to the one before
 			{
 				charCount++;
 			}
 			else
 			{
 				cout << charCount;
-				currentseqCount++;
+				currentSeqCount++;
 				charCount = 1;
 			}
 		}
 		cout << charCount << endl; // print the last sequence
-		currentseqCount++;
+		currentSeqCount++;
 
-		if (currentseqCount > maxSeq) //check the maximum sequence
+		if (currentSeqCount > maxSeq) //check the maximum sequence
 		{
-			maxSeq = currentseqCount;
+			maxSeq = currentSeqCount;
 		}
 	}
 	return maxSeq;
